@@ -71,4 +71,28 @@ progress.addEventListener("mousedown", () => {
 progress.addEventListener("mouseup", () => {
   click = false;
 });
+ let fullscreenVar=false;
+fullscreen=()=>{
+  if(!fullscreenVar){
+    
+      player.requestFullscreen();
+    
+      player.webkitRequestFullscreen();
+  
+  fullscreenVar=true;
+}
+else{
+  
+ 
+    document.exitFullscreen();
+  
+  fullscreenVar=false;
+}
+}
+
+
 progress.addEventListener("mousemove", scrubForward);
+progress.addEventListener("mouseout", () => {
+  click = false;
+});
+
